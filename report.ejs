@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Report</title>
+</head>
+<body>
+<h2>Report generated for user:<%=search%></h2>
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Question</th>
+<th>Course Name</th>
+<th>Answer</th>
+
+
+<%for(var item of feedback){%>
+    <%var k=JSON.stringify(item.name)%>
+    <%if (item.name.localeCompare(search)==false){%>
+     <tr>
+     <td><%=JSON.stringify(item.name)%></td>
+     <td><%=JSON.stringify(item.question)%></td>
+     <td><%=JSON.stringify(item.course_name)%></td>
+     <td><%=JSON.stringify(item.answer)%></td>
+     </tr>
+   <% }%>
+   <%}%>
+   </table>
+   </body>
